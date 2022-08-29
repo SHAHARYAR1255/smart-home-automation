@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second Room</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+
+    <script>
+        // REPLACE WITH YOUR web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyClNf2p2luGn9EB5elHwL-auPMFQpHHOR0",
+            authDomain: "ned-ha.firebaseapp.com",
+            databaseURL: "https://ned-ha-default-rtdb.firebaseio.com",
+            projectId: "ned-ha",
+            storageBucket: "ned-ha.appspot.com",
+            messagingSenderId: "479225806624",
+            appId: "1:479225806624:web:8665800d8c4f6c0055a145"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        var database = firebase.database();
+    </script>
+    <script src="appSR.js"></script>
+
+</head>
+
+<body>
+    <div class="topnav">
+        <h4 style="font-size: 1.5rem;">SECOND ROOM</h4>
+    </div>
+    <div class="flex-contain">
+
+        <div class="flex-container-room">
+            <div class="card">
+                <h4> TEMPERATURE </h4>
+                <p><span id="temp">0</span> °C</p>
+            </div>
+
+            <div class="card ">
+                <h4> HUMIDITY </h4>
+                <p><span id="hum">0</span> % </p>
+            </div>
+
+            <div class="card status">
+                <h4> ADJUST TEMPERATURE </h4>
+                <input type="number" placeholder="Enter Temperature" id="tempadjust">
+                <button type="button" id="updatesw" onclick="adjust()"> UPDATE </button>
+            </div>
+
+        </div>
+
+        <div class="flex-container-room">
+            <div class="card status">
+                <h4> FAN STATUS </h4>
+                <p style="text-transform: uppercase;color: darkblue;"><span id="fan">ON </span></p>
+                <!-- Rounded switch -->
+                <label class="switch">
+                    <input type="checkbox" id="fansw" onclick="checkstatefan()">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+
+            <div class="card status">
+                <h4> LIGHT STATUS </h4>
+                <p style="text-transform: uppercase;color: darkblue;"><span id="light">ON </span></p>
+                <!-- Rounded switch -->
+                <label class="switch">
+                    <input type="checkbox" id="lightsw" onclick="checkstatelight()">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+
+        <div class="flex-container-room">
+            <div class="card">
+                <h4>
+                    <a href="mainroom.html" style="text-decoration:none;  " target="_blank">Main Room</a>
+                </h4>
+            </div>
+            <div class="card">
+                <h4>
+                    <a href="firstroom.html" style="text-decoration:none; " target="_blank">First Room</a>
+                </h4>
+            </div>
+            <div class="card">
+                <h4>
+                    Second Room
+                </h4>
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+
+</html>
+
